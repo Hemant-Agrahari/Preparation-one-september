@@ -1535,16 +1535,16 @@ Q.What is the difference between slice() and splice() in JavaScript?
 slice()
 
 Returns a shallow copy of a portion of the array into a new array.
-
 Does NOT modify the original array.
-
 Syntax: array.slice(start, end)
 
 splice()
 
 Changes the original array by adding/removing elements.
-
 Returns the deleted elements as a new array.
-
 Syntax: array.splice(start, deleteCount, item1, item2, ...)
+
+Q.What is event loop?
+
+Q.What is event 
 
