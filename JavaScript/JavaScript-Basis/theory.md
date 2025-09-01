@@ -1468,10 +1468,8 @@ Synchronous JavaScript executes code line by line and blocks further execution u
 Q. What is the difference between map() and forEach()?
 map() creates a new array with transformed values, while forEach() just executes a function on each element and returns undefined. Use map() when you need a result, forEach() for side-effects.
 
-Q.2. What is the difference between null and undefined?
-
-1.null is an intentional empty value assigned by the developer.
-2.undefined means a variable has been declared but not assigned.
+Q. What is the difference between null and undefined?
+null is an intentional empty value explicitly set by the developer, whereas undefined means a variable has been declared but hasn’t been assigned any value yet
 
 Q.What is the difference between a function declaration, a function expression, and an arrow function?
 
@@ -1480,16 +1478,10 @@ Q.What is the difference between a function declaration, a function expression, 
 3.Arrow functions don’t have their own this and are shorter syntax.
 
 Q.What is the difference between for...in and for...of loops?
-
-1.for...in iterates over object keys.
-2.for...of iterates over iterable values like arrays and strings.
+for...in iterates over the keys (property names) of an object, while for...of iterates over the values of an iterable like arrays, strings, or maps.
 
 Q. What is the difference between call(), apply(), and bind()?
-
-1.call() calls a function with arguments one by one.
-2.apply() calls with arguments as an array.
-3.bind() returns a new function with this fixed, without calling immediately.
-
+call() invokes a function immediately with arguments passed one by one, apply() invokes it immediately with arguments passed as an array, and bind() returns a new function with a fixed this context that can be invoked later.
 
 Q. What is the difference between setTimeout() and setInterval()?
 
@@ -1497,10 +1489,7 @@ Q. What is the difference between setTimeout() and setInterval()?
 2.setInterval() runs repeatedly at fixed intervals.
 
 Q.What is the difference between localStorage, sessionStorage, and cookies?
-
-1.localStorage: data persists until cleared manually.
-2.sessionStorage: clears when the tab is closed.
-3.cookies: small data with expiry, sent with every HTTP request.
+localStorage stores data with no expiry (until cleared manually), sessionStorage stores data only for a browser tab session, and cookies store small pieces of data with an expiry date that are automatically sent to the server with every HTTP request.
 
 Q.What is the difference between a shallow copy and a deep copy?
 A shallow copy only copies the first level of an object, so nested objects or arrays still share references with the original, whereas a deep copy creates a fully independent clone where even nested objects are duplicated and do not affect the original.
@@ -1522,9 +1511,6 @@ Q.What is the difference between Promise.all(), Promise.race(), and Promise.allS
 3.Promise.allSettled(): waits for all and returns results (success or failure).
 
 Q.What is the difference between find and filter?
-Definition:
-
-find() → Returns the first element that matches the condition.
-filter() → Returns all elements that match the condition as a new array.
+find() returns the first element that satisfies the condition, while filter() returns all matching elements in a new array.
 
 Q.
