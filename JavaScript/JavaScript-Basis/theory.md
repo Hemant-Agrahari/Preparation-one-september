@@ -1503,24 +1503,17 @@ Q.What is the difference between localStorage, sessionStorage, and cookies?
 3.cookies: small data with expiry, sent with every HTTP request.
 
 Q.What is the difference between a shallow copy and a deep copy?
-
-1.Shallow copy: copies only the first level; nested objects still reference original.
-2.Deep copy: creates a completely independent copy, including nested objects.
+A shallow copy only copies the first level of an object, so nested objects or arrays still share references with the original, whereas a deep copy creates a fully independent clone where even nested objects are duplicated and do not affect the original.
 
 Q. What is the difference between event bubbling and event capturing?
-
-1.Bubbling: event flows from target up to the root.
-2.Capturing: event flows from root down to the target.
+In Event Bubbling, the event starts from the target element and bubbles up to the root, while in Event Capturing, the event starts from the root and travels down to the target element.
 
 Q.What is the difference between slice() and splice() in arrays?
-
-1.slice(): returns a shallow copy without modifying original.
-2. splice(): modifies the original by adding/removing elements.
+slice() returns a shallow copy of a portion of the array without modifying the original, while splice() actually changes the original array by adding, removing, or replacing elements
 
 Q.What is the difference between Object.freeze() and Object.seal()?
-
-1.freeze(): makes object fully immutable.
-2.seal(): prevents adding/removing properties but allows modifying existing ones.
+Object.freeze() makes an object fully immutable — you can’t add, remove, or modify its properties.
+On the other hand, Object.seal() prevents adding or removing properties, but you can still update the existing property values.
 
 Q.What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?
 
@@ -1533,3 +1526,5 @@ Definition:
 
 find() → Returns the first element that matches the condition.
 filter() → Returns all elements that match the condition as a new array.
+
+Q.
