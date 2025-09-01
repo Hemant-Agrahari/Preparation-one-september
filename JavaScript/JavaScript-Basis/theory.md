@@ -1346,4 +1346,190 @@ console.log(i); // 3 (accessible outside loop)
 // console.log(j); // ReferenceError (not accessible)
 ```
 
-Q.
+Q.What is the difference between == and ===?
+
+== checks only value (with type conversion), while === checks both value and data type
+
+
+Q.What are truthy and falsy values in JavaScript?
+In JavaScript, every value is either truthy (treated as true) or falsy (treated as false) when evaluated in a Boolean context (like inside if conditions).
+
+These are always considered false:
+
+1.false
+2.0
+3.-0
+4.0n (BigInt zero)
+5."" (empty string)
+6.null
+7.undefined
+8.NaN
+
+Q.What is a closure and why is it used?
+A **closure** is a feature where an **inner function has access to variables from its outer (enclosing) function's scope** even after the outer function has finished executing.
+
+### 📍 **What is a Closure?**
+- **Definition**: A function bundled together with references to its surrounding state (lexical environment)
+- **Key Point**: Inner function "remembers" the environment in which it was created
+- **Lifetime**: Variables in the closure persist even after outer function returns
+
+---
+
+## 🔍 **How Closures Work:**
+
+### **Basic Example:**
+```javascript
+function outerFunction(x) {
+    // Outer function's variable
+    let outerVariable = x;
+    
+    // Inner function (this creates a closure)
+    function innerFunction(y) {
+        // Inner function can access outerVariable
+        return outerVariable + y;
+    }
+    
+    return innerFunction; // Return the inner function
+}
+
+// Usage
+const addFive = outerFunction(5); // outerFunction executes and returns innerFunction
+console.log(addFive(3)); // 8 (5 + 3)
+
+// Even though outerFunction finished executing,
+// innerFunction still remembers outerVariable (5)
+```
+
+### **Step-by-step Breakdown:**
+1. `outerFunction(5)` is called
+2. `outerVariable` is set to `5`
+3. `innerFunction` is created (forming a closure over `outerVariable`)
+4. `outerFunction` returns `innerFunction` and finishes execution
+5. `addFive` now holds reference to `innerFunction`
+6. When `addFive(3)` is called, it still has access to `outerVariable` (5)
+
+---
+
+## 🎯 **Classic Closure Example - Counter:**
+
+```javascript
+function createCounter() {
+    let count = 0; // Private variable
+    
+    return function() {
+        count++; // Increment the private variable
+        return count;
+    };
+}
+
+// Create counters
+const counter1 = createCounter();
+const counter2 = createCounter();
+
+// Each counter maintains its own count
+console.log(counter1()); // 1
+console.log(counter1()); // 2
+console.log(counter1()); // 3
+
+console.log(counter2()); // 1 (separate counter)
+console.log(counter2()); // 2
+
+// count variable is private - cannot access directly
+// console.log(count); // ReferenceError: count is not defined
+```
+---
+Q.What is the difference between function declaration and function expression?
+Function Declaration
+
+1.A function defined with the function keyword and a name.
+2.Hoisted → can be called before it is defined
+
+console.log(greet()); // ✅ works
+
+function greet() {
+  return "Hello!";
+}
+
+Function Expression
+
+1.A function assigned to a variable (can be anonymous or named).
+2.Not hoisted → can only be called after definition.
+// console.log(greet()); // ❌ ReferenceError
+
+const greet = function () {
+  return "Hello!";
+};
+console.log(greet()); // ✅ works
+
+
+Q.What is the difference between synchronous and asynchronous JavaScript?
+Synchronous JavaScript executes code line by line and blocks further execution until a task finishes, while asynchronous JavaScript allows non-blocking execution where tasks like API calls or timers run in the background and complete later via callbacks, promises, or async/await.
+
+Q. What is the difference between map() and forEach()?
+map() creates a new array with transformed values, while forEach() just executes a function on each element and returns undefined. Use map() when you need a result, forEach() for side-effects.
+
+Q.2. What is the difference between null and undefined?
+
+1.null is an intentional empty value assigned by the developer.
+2.undefined means a variable has been declared but not assigned.
+
+Q.What is the difference between a function declaration, a function expression, and an arrow function?
+
+1.Declarations are hoisted and can be called before definition.
+2.Expressions are not hoisted.
+3.Arrow functions don’t have their own this and are shorter syntax.
+
+Q.What is the difference between for...in and for...of loops?
+
+1.for...in iterates over object keys.
+2.for...of iterates over iterable values like arrays and strings.
+
+Q. What is the difference between call(), apply(), and bind()?
+
+1.call() calls a function with arguments one by one.
+2.apply() calls with arguments as an array.
+3.bind() returns a new function with this fixed, without calling immediately.
+
+
+Q. What is the difference between setTimeout() and setInterval()?
+
+1.setTimeout() runs code once after a delay.
+2.setInterval() runs repeatedly at fixed intervals.
+
+Q.What is the difference between localStorage, sessionStorage, and cookies?
+
+1.localStorage: data persists until cleared manually.
+2.sessionStorage: clears when the tab is closed.
+3.cookies: small data with expiry, sent with every HTTP request.
+
+Q.What is the difference between a shallow copy and a deep copy?
+
+1.Shallow copy: copies only the first level; nested objects still reference original.
+2.Deep copy: creates a completely independent copy, including nested objects.
+
+Q. What is the difference between event bubbling and event capturing?
+
+1.Bubbling: event flows from target up to the root.
+2.Capturing: event flows from root down to the target.
+
+Q.What is the difference between slice() and splice() in arrays?
+
+1.slice(): returns a shallow copy without modifying original.
+2. splice(): modifies the original by adding/removing elements.
+
+Q.What is the difference between Object.freeze() and Object.seal()?
+
+1.freeze(): makes object fully immutable.
+2.seal(): prevents adding/removing properties but allows modifying existing ones.
+
+Q.What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?
+
+1.Promise.all(): waits for all to resolve (fails if one rejects).
+2.Promise.race(): resolves/rejects with the first settled promise.
+3.Promise.allSettled(): waits for all and returns results (success or failure).
+
+Q.What is the difference between find and filter?
+Definition:
+
+find() → Returns the first element that matches the condition.
+filter() → Returns all elements that match the condition as a new array.
