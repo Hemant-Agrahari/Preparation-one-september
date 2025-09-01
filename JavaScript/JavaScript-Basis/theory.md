@@ -1513,4 +1513,38 @@ Q.What is the difference between Promise.all(), Promise.race(), and Promise.allS
 Q.What is the difference between find and filter?
 find() returns the first element that satisfies the condition, while filter() returns all matching elements in a new array.
 
-Q.
+Q.What is split() in JavaScript?
+The split() method in JavaScript is used to split a string into an array of substrings based on a specified separator (like a character, word, or regex).
+
+syntax:
+string.split(separator, limit);
+
+let str = "JavaScript is awesome";
+console.log(str.split(" "));  
+// ["JavaScript", "is", "awesome"]
+
+let word = "hello";
+console.log(word.split(""));  
+// ["h", "e", "l", "l", "o"]
+
+let str = "apple,banana,orange,grape";
+console.log(str.split(",", 2));  
+// ["apple", "banana"]
+
+Q.What is the difference between slice() and splice() in JavaScript?
+slice()
+
+Returns a shallow copy of a portion of the array into a new array.
+
+Does NOT modify the original array.
+
+Syntax: array.slice(start, end)
+
+splice()
+
+Changes the original array by adding/removing elements.
+
+Returns the deleted elements as a new array.
+
+Syntax: array.splice(start, deleteCount, item1, item2, ...)
+
