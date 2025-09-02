@@ -1546,5 +1546,9 @@ Syntax: array.splice(start, deleteCount, item1, item2, ...)
 
 Q.What is event loop?
 
-Q.What is event 
+Q.What is protype? 
+
+Q.What is Temporary Dead Zone?
+
+Q.
 
