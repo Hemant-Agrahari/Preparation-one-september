@@ -94,4 +94,7 @@ File-based routing means that the file and folder structure inside the project d
 For example, in Next.js, if I create a file pages/about.js, it automatically becomes the /about route. If I create pages/blog/[id].js, it becomes a dynamic route that can handle /blog/1, /blog/2, and so on.
 This makes routing very intuitive because the developer can simply look at the folder structure and understand the routes of the application.
 
-Q.
+Q.What is the purpose of the pages directory vs the app directory?
+The purpose of the pages directory is to provide a simple, file-based routing system. Every file becomes a route automatically, and it allows us to implement SSR, SSG, and CSR with functions like getServerSideProps and getStaticProps. It was designed to make routing easy without extra configuration.
+
+The purpose of the app directory is to introduce a more powerful and flexible routing system. It’s built on React Server Components and gives us advanced features like nested layouts, loading and error states, streaming, and better data-fetching patterns. The idea is to solve the limitations of the old pages system and make applications more scalable and optimized.
