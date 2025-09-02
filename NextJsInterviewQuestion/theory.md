@@ -19,6 +19,13 @@ Disadvantages of Next.js
 4.Opinionated Structure: File-based routing may feel restrictive for some complex projects.
 5.Limited Control Over Some Optimizations: Some automatic optimizations may require workarounds to customize.
 
+Q.What is the difference between React and Next.js?
+React is a JavaScript library for building user interfaces. It only handles the view layer, so for routing, data fetching, and server-side rendering, we need to use additional libraries like React Router or custom setups.
+
+Next.js, on the other hand, is a full-stack React framework. It is built on top of React but provides many features out of the box such as file-based routing, server-side rendering (SSR), static site generation (SSG), incremental static regeneration (ISR), API routes, image optimization, and built-in performance optimizations.
+
+React is just the UI library, while Next.js is a framework built on top of React that adds routing, data fetching, SSR, SSG, ISR, and optimizations for building full-stack, production-ready applications.
+
 Q.What is SSR?
 SSR stands for Server-Side Rendering. In this approach, the HTML of the page is generated on the server at request time. So, whenever a user requests a page, the server fetches the required data, prepares the HTML with content, and then sends it back to the client.
 
@@ -74,3 +81,17 @@ It also supports dynamic routes using square brackets. For example, if I create 
 With Page Routing, data fetching is done using functions like getStaticProps, getServerSideProps, and getStaticPaths.
 
 The advantage of Page Routing is that it’s simple and easy to understand, but the limitation is that it doesn’t support advanced features like nested layouts, React Server Components, streaming, or fine-grained loading states, which are available in the new App Routing system.
+
+Q.What is the difference between app vs page route?
+Next.js provides two types of routing systems: Page Routing and App Routing.
+
+Page Routing is the older system that uses the pages directory. Each file becomes a route, and we use data-fetching methods like getStaticProps, getServerSideProps, and getStaticPaths. It’s very simple and easy to use, but has limited flexibility.
+
+App Routing is the newer system introduced in Next.js 13. It uses the app directory, where folders define routes and special files like page.js, layout.js, loading.js, and error.js provide advanced features. It’s built on top of React Server Components and supports nested layouts, streaming, partial rendering, and better data-fetching patterns.
+
+Q.What is File based routing
+File-based routing means that the file and folder structure inside the project directly maps to the routes of the application. Instead of manually configuring routes, the framework automatically creates them based on the file names.
+For example, in Next.js, if I create a file pages/about.js, it automatically becomes the /about route. If I create pages/blog/[id].js, it becomes a dynamic route that can handle /blog/1, /blog/2, and so on.
+This makes routing very intuitive because the developer can simply look at the folder structure and understand the routes of the application.
+
+Q.
