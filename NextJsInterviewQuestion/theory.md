@@ -209,3 +209,31 @@ Disadvantages include a learning curve for beginners, more complex setup compare
 Q. How many hooks are there in Next.js?
 
 Next.js mainly provides routing-related hooks. In the pages router, we use useRouter. In the app router, we have usePathname, useSearchParams, useParams, and useSelectedLayoutSegment. Apart from these, we use normal React hooks like useState and useEffect since Next.js is built on top of React.
+
+Q.How many time of Hooks available in nextjs?
+ useState
+It is used to add and manage state in a functional component. Example: toggling a modal or storing input values.
+
+useEffect
+It is used to perform side effects like API calls, subscriptions, or DOM updates after rendering.
+
+useRef
+It gives a way to access and store mutable values that don’t cause re-renders, like accessing DOM elements or storing a timer ID.
+
+useContext
+It allows us to access values from React Context without passing props manually at every level.
+
+useMemo
+It is used to memoize (cache) expensive calculations so they don’t re-run unnecessarily.
+
+useCallback
+It is used to memoize functions so they don’t get recreated on every render, which helps in performance.
+
+useReducer
+It is an alternative to useState for managing complex state logic using reducers, similar to Redux pattern.
+
+useLayoutEffect
+It works like useEffect but runs synchronously after DOM mutations, useful for measuring DOM size or layout.
+
+useImperativeHandle
+It lets you customize the value exposed when using refs in a child component.
