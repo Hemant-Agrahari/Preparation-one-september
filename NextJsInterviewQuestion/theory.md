@@ -206,3 +206,6 @@ Q. What are some advantages and disadvantages of using Next.js in production?
 Advantages of Next.js include built-in support for SSR, SSG, ISR, API routes, image optimization, file-based routing, and great performance for SEO and user experience. It also supports edge rendering and React Server Components.
 Disadvantages include a learning curve for beginners, more complex setup compared to plain React, larger bundle sizes if not optimized, and reliance on Node.js for server features.
 
+Q. How many hooks are there in Next.js?
+
+Next.js mainly provides routing-related hooks. In the pages router, we use useRouter. In the app router, we have usePathname, useSearchParams, useParams, and useSelectedLayoutSegment. Apart from these, we use normal React hooks like useState and useEffect since Next.js is built on top of React.
