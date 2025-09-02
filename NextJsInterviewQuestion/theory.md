@@ -107,6 +107,102 @@ Q. What is the role of the Link component in Next.js?
 
 The Link component in Next.js is used for client-side navigation between routes. It prevents full page reloads and makes the navigation faster by prefetching the page content in the background. This improves performance and gives a smoother single-page application experience.
 
-Q. How is navigation different in Next.js compared to React Router?
+Q.How is navigation different in Next.js compared to React Router?
 
 In React Router, we have to manually configure routes and use components like Route and Switch, while in Next.js routing is file-based, meaning the folder and file structure defines the routes automatically. For navigation, Next.js uses the Link component with prefetching, while React Router uses Link or NavLink without automatic prefetching. This makes Next.js navigation faster and more SEO-friendly.
+
+Q. How do you implement SSR in Next.js?
+
+In Next.js, SSR is implemented using the getServerSideProps function. This function runs on the server at request time, fetches the data, and passes it as props to the page. Every time a user visits the page, the server generates the HTML with fresh data and sends it to the browser.
+
+Q. How do you implement SSG in Next.js?
+
+In Next.js, SSG is implemented using the getStaticProps function. This function runs at build time, fetches the data, and pre-renders the HTML as a static file. The page is then served from the CDN, making it very fast. For dynamic routes, getStaticPaths is also used to define which paths should be generated at build time.
+
+Q. How do you implement ISR in Next.js?
+
+In Next.js, ISR is implemented by using getStaticProps with a revalidate property. The page is first generated at build time, and then after the revalidate time has passed, Next.js regenerates the page in the background with fresh data. This way, the page stays fast like SSG but also updates periodically like SSR.
+
+Q. What is hydration in Next.js?
+
+Hydration in Next.js is the process where the server-rendered HTML is sent to the browser and then React attaches event listeners and makes the page interactive. Initially, the user sees the static HTML, and once JavaScript loads, React hydrates the page so that it behaves like a React app.
+
+Q. What are getStaticProps, getServerSideProps, and getStaticPaths?
+
+getStaticProps is used for static site generation where data is fetched at build time. getServerSideProps is used for server-side rendering where data is fetched at request time for every user request. getStaticPaths is used along with getStaticProps for dynamic routes, where it defines which paths should be pre-rendered at build time.
+
+
+Q. What are server components vs client components?
+
+Server components are components that run only on the server and never get sent as JavaScript to the client. They are faster, smaller, and more secure since sensitive logic stays on the server. Client components run in the browser and include interactivity like event handling, state management, or hooks such as useState and useEffect. In Next.js, by default, components are server components, and if we need client-side behavior, we mark them with "use client" at the top.
+
+Q. What is the role of layout.js in App Routing?
+
+The layout.js file is used to define a layout for a specific route in the app directory. It allows us to create nested layouts where the layout is shared across multiple pages. For example, a dashboard layout with a sidebar and header can wrap multiple dashboard pages without repeating the same code. Layouts persist across navigation, which improves performance and user experience.
+
+Q. What is the role of loading.js, error.js, and not-found.js?
+
+The loading.js file is used to show a loading state while a page or data is being fetched. The error.js file is used to handle errors for a specific route and display a custom error UI. The not-found.js file is used to show a custom 404 page when a route or resource is not found. These files provide better user experience by handling different states gracefully.
+
+Q. What are parallel routes and intercepting routes?
+
+Parallel routes allow us to render multiple pages or UI segments in parallel within the same layout. This is useful for cases like dashboards where we want different sections to load independently. Intercepting routes allow us to load a different version of a route depending on the context. For example, opening a chat in a modal instead of a full page without breaking navigation.
+
+Q. How does data fetching work in the app directory?
+
+In the app directory, data fetching is built on React Server Components. We can fetch data directly inside server components using async/await without extra hooks. Next.js also supports streaming and Suspense, so pages can render progressively as data loads. This provides faster performance compared to the pages directory data fetching methods.
+
+Q. What are React Server Components and why are they used in Next.js?
+
+React Server Components are components that render on the server and send only the rendered HTML to the client. They do not include JavaScript in the client bundle, which makes the app faster and reduces bundle size. They are used in Next.js to improve performance, enable better caching, and keep sensitive logic on the server. By combining server and client components, Next.js gives both speed and interactivity.
+
+Q. How does Next.js optimize performance compared to React?
+
+Next.js optimizes performance by providing server-side rendering, static site generation, and incremental static regeneration out of the box. It also automatically code-splits pages, optimizes images and fonts, supports caching, and uses React Server Components for smaller bundles. These features reduce load time and improve SEO compared to plain React apps, which rely only on client-side rendering.
+
+Q. What is image optimization in Next.js and how does next/image work?
+
+Image optimization in Next.js ensures images load faster and are responsive across devices. The next/image component automatically optimizes images by resizing, compressing, and serving them in modern formats like WebP. It also supports lazy loading, meaning images load only when they are in the viewport, which improves page speed.
+
+Q. What is font optimization in Next.js?
+
+Font optimization in Next.js helps reduce layout shifts and improves performance by automatically downloading and serving only the fonts actually used on the page. With next/font, Google Fonts and local fonts can be optimized at build time, and the fonts are served with the app instead of fetching them from external servers.
+
+Q. What is code splitting and how does Next.js handle it?
+
+Code splitting is the process of breaking the JavaScript bundle into smaller chunks so that the browser only loads what is needed. Next.js automatically performs code splitting at the page level, meaning each page loads only the code it needs instead of the entire app. This makes the initial load much faster.
+
+Q. How does Next.js support lazy loading and dynamic imports?
+
+Next.js supports lazy loading with dynamic imports. By using the dynamic() function, we can import components only when they are needed instead of including them in the initial bundle. This reduces page size and improves performance, especially for heavy components like charts or modals.
+
+Q. What is static optimization in Next.js?
+
+Static optimization means that Next.js automatically pre-renders pages as static HTML at build time when no server-side data is required. If a page does not use getServerSideProps, it is automatically considered static and optimized for performance. These static pages can be cached on a CDN for very fast loading.
+
+Q. What is middleware in Next.js and how do you use it?
+
+Middleware in Next.js is code that runs before a request is completed. It allows us to intercept requests and perform actions like authentication, redirects, logging, or feature flags. Middleware is placed in a middleware.js file at the root or inside specific folders, and it runs on the Edge, making it very fast.
+
+Q. What is server-side streaming in Next.js?
+Server-side streaming in Next.js allows the server to send parts of the HTML to the browser as soon as they are ready instead of waiting for the full page to render. This makes the page load faster and gives the user a better experience because they see content sooner while the rest of the page continues to load.
+
+Q. What are React Suspense and streaming in Next.js?
+React Suspense lets us pause rendering while waiting for data or components to load, and then show a fallback like a loader. Streaming in Next.js works with Suspense to progressively send UI chunks from the server to the client. Together, they make apps faster by avoiding long blank screens and showing parts of the page as they are ready.
+
+Q. What are middlewares in Next.js and when would you use them?
+Middlewares in Next.js are functions that run before a request is completed. They are useful for authentication, redirects, logging, feature flags, and request modification. For example, you can check if a user is logged in before allowing them to access a protected page.
+
+Q. How does Next.js handle authentication and authorization?
+Next.js handles authentication by combining API routes, middleware, and libraries like NextAuth.js or JWT. Authentication verifies the user’s identity, while authorization checks their permissions. Middleware can protect routes, and API routes can validate tokens before sending sensitive data.
+
+Q. What is Edge Rendering in Next.js?
+Edge Rendering means running parts of the app on servers that are closer to the user, called edge servers. This reduces latency and speeds up response times. Next.js supports Edge Rendering with middleware and edge functions, making it great for things like personalization and A/B testing.
+
+Q. How do you secure API routes in Next.js?
+API routes in Next.js can be secured by validating authentication tokens, using middleware for checks, setting proper CORS policies, and limiting sensitive operations to authorized users only. Often, JWT or session-based authentication is used to ensure only valid users can access protected APIs.
+
+Q. What are some advantages and disadvantages of using Next.js in production?
+Advantages of Next.js include built-in support for SSR, SSG, ISR, API routes, image optimization, file-based routing, and great performance for SEO and user experience. It also supports edge rendering and React Server Components.
+Disadvantages include a learning curve for beginners, more complex setup compared to plain React, larger bundle sizes if not optimized, and reliance on Node.js for server features.
+
