@@ -98,3 +98,15 @@ Q.What is the purpose of the pages directory vs the app directory?
 The purpose of the pages directory is to provide a simple, file-based routing system. Every file becomes a route automatically, and it allows us to implement SSR, SSG, and CSR with functions like getServerSideProps and getStaticProps. It was designed to make routing easy without extra configuration.
 
 The purpose of the app directory is to introduce a more powerful and flexible routing system. It’s built on React Server Components and gives us advanced features like nested layouts, loading and error states, streaming, and better data-fetching patterns. The idea is to solve the limitations of the old pages system and make applications more scalable and optimized.
+
+Q. How do you create dynamic routes in Next.js?
+
+In Next.js, dynamic routes are created by using square brackets in the file name inside the pages or app directory. For example, creating a file called pages/blog/[id].js allows handling routes like /blog/1, /blog/2, etc. In the pages directory, we also use getStaticPaths along with getStaticProps to generate static pages for dynamic routes.
+
+Q. What is the role of the Link component in Next.js?
+
+The Link component in Next.js is used for client-side navigation between routes. It prevents full page reloads and makes the navigation faster by prefetching the page content in the background. This improves performance and gives a smoother single-page application experience.
+
+Q. How is navigation different in Next.js compared to React Router?
+
+In React Router, we have to manually configure routes and use components like Route and Switch, while in Next.js routing is file-based, meaning the folder and file structure defines the routes automatically. For navigation, Next.js uses the Link component with prefetching, while React Router uses Link or NavLink without automatic prefetching. This makes Next.js navigation faster and more SEO-friendly.
