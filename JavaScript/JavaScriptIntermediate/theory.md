@@ -48,6 +48,4 @@ Promises use the microtask queue, so their callbacks run before macrotasks like 
 Q. How does error propagation work in Promise chains?
 If an error happens in a promise chain, it propagates to the nearest .catch. If no .catch is present, it causes an unhandled promise rejection.
 
-
-
-
+Q.what is custom hook?
