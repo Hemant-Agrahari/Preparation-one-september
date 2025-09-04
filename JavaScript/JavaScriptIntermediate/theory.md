@@ -58,3 +58,5 @@ Q.What is closure?
 A closure is a feature in JavaScript where an inner function can continue to use variables from its parent function’s scope, even after the parent function is gone.
 
 Q.What is currying function?
+Q.What is higher order function?
+Q.What is the 

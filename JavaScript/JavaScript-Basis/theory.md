@@ -1552,4 +1552,4 @@ Q.What is Temporary Dead Zone?
 
 Q.What is the difference between spead and rest operator?
 Q.What is prototype
-
+Q.
