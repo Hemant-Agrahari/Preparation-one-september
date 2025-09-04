@@ -1550,5 +1550,6 @@ Q.What is protype?
 
 Q.What is Temporary Dead Zone?
 
-Q.
+Q.What is the difference between spead and rest operator?
+Q.What is prototype
 

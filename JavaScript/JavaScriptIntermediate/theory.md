@@ -53,3 +53,8 @@ Async/await is a way to handle asynchronous operations in JavaScript.
 When I put async before a function, it always returns a Promise. Inside that function, I can use the await keyword to pause execution until the Promise resolves or rejects.
 
 It makes asynchronous code look like synchronous code, so it’s easier to read and maintain compared to chaining .then() methods.
+
+Q.What is closure?
+A closure is a feature in JavaScript where an inner function can continue to use variables from its parent function’s scope, even after the parent function is gone.
+
+Q.What is currying function?
