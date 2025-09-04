@@ -108,6 +108,10 @@ return sentence
 console.log(capitalizeWords("hemant kumar agrahari"));
 // Output: Hemant Kumar Agrahari
 
+
+Q.Write a function to check if a string is a palindrome.
+
+
 Q.Find the maximum and minimum number in an array.
 
 Check if a string is a palindrome.
