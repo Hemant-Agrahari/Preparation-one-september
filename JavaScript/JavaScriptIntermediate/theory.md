@@ -48,4 +48,8 @@ Promises use the microtask queue, so their callbacks run before macrotasks like 
 Q. How does error propagation work in Promise chains?
 If an error happens in a promise chain, it propagates to the nearest .catch. If no .catch is present, it causes an unhandled promise rejection.
 
-Q.what is custom hook?
+Q.what is async await?
+Async/await is a way to handle asynchronous operations in JavaScript.
+When I put async before a function, it always returns a Promise. Inside that function, I can use the await keyword to pause execution until the Promise resolves or rejects.
+
+It makes asynchronous code look like synchronous code, so it’s easier to read and maintain compared to chaining .then() methods.

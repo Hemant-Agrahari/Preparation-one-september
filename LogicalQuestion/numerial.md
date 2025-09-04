@@ -111,21 +111,18 @@ console.log(capitalizeWords("hemant kumar agrahari"));
 
 Q.Write a function to check if a string is a palindrome.
 
-
 Q.Find the maximum and minimum number in an array.
 
-Check if a string is a palindrome.
+Q.Count the number of vowels in a string.
 
-Count the number of vowels in a string.
+Q.Remove duplicates from an array.
 
-Remove duplicates from an array.
+Q.Write a function to flatten a nested array [1,[2,[3,4],5]] → [1,2,3,4,5].
 
-Write a function to flatten a nested array [1,[2,[3,4],5]] → [1,2,3,4,5].
+Q.Implement a custom map() function.
 
-Implement a custom map() function.
+Q.Check if two strings are anagrams.
 
-Check if two strings are anagrams.
+Q.Find the first non-repeating character in a string.
 
-Find the first non-repeating character in a string.
-
-Write a debounce function.
+Q.Write a debounce function.
