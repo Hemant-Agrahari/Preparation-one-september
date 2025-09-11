@@ -58,5 +58,33 @@ Q.What is closure?
 A closure is a feature in JavaScript where an inner function can continue to use variables from its parent function’s scope, even after the parent function is gone.
 
 Q.What is currying function?
+Currying is a technique in JavaScript where a function is transformed into a sequence of functions, each taking a single argument. Instead of passing all arguments at once, you can pass them one by one.
+
 Q.What is higher order function?
-Q.What is the 
+A higher-order function is a function that either takes another function as an argument, or returns a function as its result, or both. It’s a concept that helps in making code more reusable and functional.
+
+Q.What is the difference between memo and useMemo?
+memo is a higher-order component that we use to prevent unnecessary re-rendering of a component. It wraps a component and compares its props — if the props haven’t changed, React skips rendering the component again. This helps improve performance when the component is receiving the same props repeatedly.
+
+On the other hand, useMemo is a hook that we use inside a component to memoize the result of an expensive calculation. It caches the value and only recalculates it when its dependencies change. This helps avoid running complex logic on every render unnecessarily.
+
+Q.What is deep copy and what is shadow copy?
+ A shallow copy creates a new object, but it only copies the top-level properties. If any property is an object or an array, it still refers to the same reference in memory. That means changes in nested objects will affect both the original and the copied object.
+
+ const original = { name: 'Hemant', address: { city: 'Delhi' } };
+const shallowCopy = { ...original };
+
+shallowCopy.address.city = 'Mumbai';
+console.log(original.address.city); // Output: 'Mumbai'
+Here, changing address.city in the copy also changes it in the original because only the reference is copied
+
+Deep Copy:
+A deep copy creates a completely new object with all nested objects and arrays duplicated as well. Changes in the copied object don’t affect the original.
+
+const original = { name: 'Hemant', address: { city: 'Delhi' } };
+const deepCopy = JSON.parse(JSON.stringify(original));
+
+deepCopy.address.city = 'Mumbai';
+console.log(original.address.city); // Output: 'Delhi'
+In this case, even though we change address.city in the copied object, the original remains unchanged because all nested objects are also copied.”
+
