@@ -1545,15 +1545,166 @@ Returns the deleted elements as a new array.
 Syntax: array.splice(start, deleteCount, item1, item2, ...)
 
 Q.What is event loop?
+The Event Loop in JavaScript is a mechanism that handles asynchronous operations (like setTimeout, promises, fetch calls, etc.) by continuously checking and executing tasks from different queues.
 
-Q.What is protype? 
+Since JavaScript is single-threaded (executes one thing at a time), the Event Loop makes it possible to do tasks like waiting for a timer, handling user clicks, or fetching data without blocking the main thread
+
+How it works (Step by Step)
+
+Call Stack (Execution stack)
+
+Where JavaScript executes code line by line.
+
+Example: console.log("Hello") goes here first.
+
+Web APIs / Background APIs
+
+Browser provides APIs (like setTimeout, fetch, DOM events).
+
+When you call them, they run outside the call stack.
+
+Callback / Task Queue (Message Queue)
+
+Once a Web API finishes (e.g., timer done, data fetched), the callback is moved here.
+
+Event Loop
+
+Constantly checks:
+👉 “Is the Call Stack empty?”
+
+If yes, it pushes the next task from the Queue into the Call Stack.
+
+If no, it waits.
+
+Q.What is prototype? 
+In JavaScript, Prototype is a built-in object that every function and object gets automatically. It is used to share properties and methods across all instances created from a constructor function.
+
+Think of it like a blueprint or a parent object from which other objects can inherit methods and properties
 
 Q.What is Temporary Dead Zone?
+The Temporary Dead Zone (TDZ) is the time between when a variable is hoisted and when it is initialized in JavaScript.
+
+Variables declared with let and const are hoisted (like var), but they are not initialized with a default value (undefined).
+
+During this time (before initialization), if you try to access the variable → it throws a ReferenceError.
+
+This period is called the Temporary Dead Zone (TDZ).
 
 Q.What is the difference between spead and rest operator?
-Q.What is prototype
-Q.What is the difference loaclstorage session storage and cookies?
-Q.What is event handler>
-Q.What is event deligation?
-Q.What is the difference debouncing and throtiling?
+Both spread and rest operators use three dots (...), but their purpose is different.
 
+Spread Operator is used to expand an array or object into individual elements. For example, when passing an array into a function:
+
+let nums = [1, 2, 3];
+console.log(Math.max(...nums)); // 3
+
+
+Rest Operator is used to collect multiple elements into a single array. For example, when a function takes many arguments:
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+
+Q.What is the difference loaclstorage session storage and cookies?
+LocalStorage, SessionStorage, and Cookies are all used to store data in the browser, but they differ in size, expiry, and usage.”
+
+🔹 1. LocalStorage
+
+Stores data in the browser with no expiry.
+
+Data stays even after closing/reopening the browser.
+
+Storage limit ≈ 5–10 MB.
+
+Only accessible on the client-side (JavaScript).
+localStorage.setItem("name", "Rahul");
+console.log(localStorage.getItem("name")); // Rahul
+
+2. SessionStorage
+
+Similar to LocalStorage, but data lasts only for the browser tab/session.
+
+Once the tab or window is closed → data is cleared.
+
+Storage limit ≈ 5 MB.
+sessionStorage.setItem("user", "Sneha");
+console.log(sessionStorage.getItem("user")); // Sneha
+
+3. Cookies
+
+Small pieces of data (≈ 4 KB).
+
+Can have an expiry date set by the server or client.
+
+Sent with every HTTP request → often used for authentication, sessions, tracking.
+
+Accessible by both client (JavaScript) and server.
+document.cookie = "token=abc123; expires=Fri, 31 Dec 2025 12:00:00 UTC";
+Q. What is an Event Handler?
+An event handler is a function in JavaScript that is executed when a specific event occurs, such as a user clicking a button, typing in a text box, or submitting a form. It allows us to make web pages interactive by responding to user actions or browser events
+
+Q. What is Event Delegation?
+Event delegation is a technique in JavaScript where instead of attaching event handlers to multiple child elements, we attach a single event handler to their parent element. The event bubbles up from the child to the parent, and we handle it there. This improves performance and makes the code easier to manage
+
+Event delegation means handling events at a parent level instead of attaching handlers to each child. It uses event bubbling for efficiency
+
+Q. What is the Difference Between Debouncing and Throttling?
+Debouncing
+
+Ensures that a function is only executed after a certain delay since the last time it was invoked.
+
+Useful when you want the action to run once after the user stops doing something.
+
+Throttling
+
+Ensures that a function is executed at most once in a specified time interval, no matter how many times the event is triggered.
+
+Useful when you want to limit the execution rate.
+
+Example: Window scroll event (run function every 200ms while scrolling).
+
+
+Q. Difference between every() and find() in JavaScript
+every()
+
+Tests whether all elements in an array pass a given condition.
+
+Returns a boolean (true / false).
+
+Stops execution as soon as it finds a false.
+
+
+Q.What is the difference between shift and unshift method in js?
+Q.List of return type in js
+Ans:// 🔹 JavaScript Array Methods Cheat Sheet (Return Types)
+
+// ✅ Methods that return ARRAY
+map()        → Array
+filter()     → Array
+slice()      → Array
+concat()     → Array
+flat()       → Array
+flatMap()    → Array
+
+// ✅ Methods that return VALUE (not array)
+forEach()    → undefined
+reduce()     → Single value (Number, Object, String, etc.)
+reduceRight()→ Single value
+find()       → Element (or undefined)
+findIndex()  → Number (index or -1)
+indexOf()    → Number (index or -1)
+lastIndexOf()→ Number (index or -1)
+some()       → Boolean
+every()      → Boolean
+includes()   → Boolean
+join()       → String
+toString()   → String
+
+// ✅ Methods that MUTATE the array (return something else)
+push()       → Number (new length)
+pop()        → Element (removed)
+shift()      → Element (removed)
+unshift()    → Number (new length)
+splice()     → Array (removed elements)
+sort()       → Same Array (sorted)
+reverse()    → Same A

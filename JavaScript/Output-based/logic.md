@@ -29,4 +29,25 @@ console.log(copy.a)
 Output: 5
 Explanation: Objects are reference types. copy points to the same object as obj, so modifying copy.a also affects obj.a.
 
-Q
+Q.print who age greater than 20
+let people = [
+  {
+    name: "Rahul",
+    age: 25,
+    hobbies: ["cricket", "reading", "traveling"]
+  },
+  {
+    name: "Sneha",
+    age: 22,
+    hobbies: ["painting", "dancing", "singing"]
+  },
+];
+
+const res = people.map(res=>{
+    if(res.age>20){
+        console.log('name',res.name
+        )
+    }
+})
+
+Map always return array
