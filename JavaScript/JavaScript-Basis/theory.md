@@ -1552,4 +1552,8 @@ Q.What is Temporary Dead Zone?
 
 Q.What is the difference between spead and rest operator?
 Q.What is prototype
-Q.
+Q.What is the difference loaclstorage session storage and cookies?
+Q.What is event handler>
+Q.What is event deligation?
+Q.What is the difference debouncing and throtiling?
+

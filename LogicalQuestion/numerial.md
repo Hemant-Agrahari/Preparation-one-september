@@ -126,3 +126,4 @@ Q.Check if two strings are anagrams.
 Q.Find the first non-repeating character in a string.
 
 Q.Write a debounce function.
+Q.Write a program to remove duplicate value from the array?
