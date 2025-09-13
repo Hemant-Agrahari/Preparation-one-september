@@ -265,9 +265,57 @@ Placing them at the end allows the HTML to load first, improving page performanc
 
 Q.Give me example of block labal and inline label and inline-block?
 Q.What is the diff em em and prrcentage and pixel?
+In CSS, px, em, and % are different units used for sizing, and they behave differently:
+
+Pixels (px)
+
+Absolute unit — fixed size, does not change relative to anything else.
+
+Example: font-size: 16px; → always 16 pixels, no matter the parent.
+
+Use when you want precise, unchanging dimensions.
+
+Ems (em)
+
+Relative unit — relative to the font size of the parent element.
+
+Example: if parent font is 16px, 2em = 32px.
+
+Useful for scalable and responsive text sizing.
+
+Percentage (%)
+
+Relative unit — relative to the parent element’s size (width, height, or font size depending on the property).
+
+Example: width: 50%; → half the width of the parent container.
+
+Very useful for fluid layouts and responsiveness.
+
 Q.How do you make a website mobile friendly
 Ans.I will use flexbox or media query
+===============================================================================================================
 Q.What is the difference css grid and flexbox?
+Both CSS Grid and Flexbox are layout systems in CSS, but they are designed for different purposes:
+#-Flexbox (Flexible Box Layout)
+Designed for one-dimensional layouts (either row or column).
+Great for aligning and distributing space among items in a single line.
+Examples: navigation bars, buttons in a row, or vertically centering elements.
+
+Supports properties like justify-content, align-items, flex-wrap.
+
+#-CSS Grid
+
+Designed for two-dimensional layouts (rows and columns simultaneously).
+
+Ideal for complex page layouts, like grids of cards or full web page layouts.
+
+Supports properties like grid-template-columns, grid-template-rows, grid-gap.
+
+In short:
+👉 Flexbox = 1D (row or column), simpler alignment.
+👉 Grid = 2D (rows + columns), complex layout control.
+
+===============================================================================================================
 Q.Why do we use semantic element instead of div?
 “We use semantic elements instead of generic <div>s because semantic tags add meaning to the structure of a webpage.
 
