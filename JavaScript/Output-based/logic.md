@@ -28,3 +28,5 @@ copy.a=5;
 console.log(copy.a)
 Output: 5
 Explanation: Objects are reference types. copy points to the same object as obj, so modifying copy.a also affects obj.a.
+
+Q

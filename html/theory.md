@@ -5,6 +5,35 @@ In modern web development, we usually write <!DOCTYPE html> which indicates HTML
 
 By declaring the doctype, we make sure our page is interpreted consistently across different browsers, which improves compatibility and prevents unexpected layout or styling issues.”
 
+Q.What is the difference between HTML and html5?
+HTML and HTML5 are both markup languages used to structure web pages, but they differ in features, syntax, and capabilities:
+
+HTML (older versions, like HTML 4.01)
+
+Primarily focused on structuring content.
+
+Limited support for multimedia, semantic elements, and modern web APIs.
+
+More reliant on external plugins (like Flash) for audio, video, and interactive content.
+
+Syntax was more lenient, less strict.
+
+HTML5 (latest standard)
+
+Designed for modern web development with rich features.
+
+Introduces semantic tags like <header>, <nav>, <section>, <article>, <footer> for better structure.
+
+Natively supports audio, video, canvas, SVG, and offline storage without plugins.
+
+Includes new APIs like Geolocation, Web Storage, Web Workers, and Drag & Drop.
+
+Focuses on performance, accessibility, and cross-device compatibility.
+
+In short:
+👉 HTML = basic structure.
+👉 HTML5 = modern, semantic, multimedia-rich, and API-enabled web standard.”
+
 Q.WHat is the use of head tag?
 The <head> tag in HTML is used to hold metadata and resources about the web page that are not directly displayed to the user. It can include things like the page <title>, links to CSS stylesheets, JavaScript files, meta tags for SEO and responsiveness, favicons, and other information needed for the browser and search engines.
 

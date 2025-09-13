@@ -127,3 +127,24 @@ Q.Find the first non-repeating character in a string.
 
 Q.Write a debounce function.
 Q.Write a program to remove duplicate value from the array?
+Q.Given an array of two strings, write a JavaScript program to check if the second string is a substring of the first string. Set a flag to true if it is, otherwise set it to false, and print the flag
+Input: ["mohsin", "sin"]
+Output: true
+
+Input: ["hello", "world"]
+Output: false
+
+let arr = ["mohsin", "sin"];
+let arr1 = arr[0]; // "mohsin"
+let arr2 = arr[1]; // "sin"
+let flag = false;
+
+if (arr1.includes(arr2)) {
+    flag = true;
+} else {
+    flag = false;
+}
+
+console.log(flag);
+
+
