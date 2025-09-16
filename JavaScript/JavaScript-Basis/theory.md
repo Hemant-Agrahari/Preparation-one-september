@@ -1,11 +1,13 @@
 Q.What is JavaScript?
+Ans:
 JavaScript is a lightweight, interpreted, prototype-based, single-threaded, and event-driven programming language that enables dynamic behavior and interactivity in web applications, making it the core of modern front-end development.
 
 Q.What is Interpreted?
+Ans:
 The code is executed line by line at runtime by an interpreter (like the browser’s JavaScript engine), instead of being fully translated into machine code beforehand (like compiled languages such as C++ or Java)
 
 Q.What is prototye-based?
-It means that objects in JavaScript can inherit properties and methods directly from other objects through a prototype chain, instead of using classes like in classical OOP.
+Ans:It means that objects in JavaScript can inherit properties and methods directly from other objects through a prototype chain, instead of using classes like in classical OOP.
 
 
 example:
@@ -30,6 +32,7 @@ Any object created with new Person() doesn’t store sayHello itself — instead
 
 Q.What are the different data types in JavaScript?
 
+Ans:
 JavaScript has **8 data types** divided into two categories:
 
 ## 📍 Primitive Data Types (7 types)
@@ -145,7 +148,7 @@ console.log(typeof function(){}); // "function"
 
 Q.What is the mean of mutable and immutable?
 
-## 🔄 Mutability in JavaScript
+ans: ## 🔄 Mutability in JavaScript
 
 **Mutable** and **Immutable** refer to whether an object's state can be changed after creation.
 
@@ -307,6 +310,7 @@ arr.push(5);          // Same array object, just modified
 
 Q.What is the let var and const in JavaScript?
 
+Ans:
 ## 🔤 Variable Declarations in JavaScript
 
 JavaScript has **three ways** to declare variables: `var`, `let`, and `const`. Each has different behavior regarding scope, hoisting, and reassignment.
@@ -543,6 +547,7 @@ function processUsers() {
 
 Q.What is the difference between declaration and initialization in term of variable?
 
+Ans:
 ## 🏗️ Variable Declaration vs Initialization
 
 **Declaration** and **Initialization** are two distinct phases in a variable's lifecycle in JavaScript.
@@ -728,6 +733,7 @@ console.log(calculateArea(5, 3));  // 15 (values provided)
 
 Q.What is hoisting in JavaScript?
 
+Ans:
 ## 🚀 Hoisting in JavaScript
 
 **Hoisting** is JavaScript's behavior of moving declarations to the top of their containing scope during the compilation phase, before code execution.
@@ -737,8 +743,7 @@ Q.What is hoisting in JavaScript?
 - **Variables and functions** are "lifted" to the top of their scope
 - **Only declarations are hoisted, NOT initializations**
 
----
-
+Ans:
 ## 🔍 **Types of Hoisting:**
 
 ### **1. Variable Hoisting**
@@ -1090,6 +1095,7 @@ function processUser(user) {
 
 Q.Explain the concept of scope in JavaScript (global, function, block).
 
+Ans:
 ## 🎯 Scope in JavaScript
 
 **Scope** determines where variables can be accessed in your code. It defines the **visibility** and **lifetime** of variables and functions.
@@ -1348,11 +1354,12 @@ console.log(i); // 3 (accessible outside loop)
 
 Q.What is the difference between == and ===?
 
+Ans:
 == checks only value (with type conversion), while === checks both value and data type
 
 
 Q.What are truthy and falsy values in JavaScript?
-In JavaScript, every value is either truthy (treated as true) or falsy (treated as false) when evaluated in a Boolean context (like inside if conditions).
+Ans:In JavaScript, every value is either truthy (treated as true) or falsy (treated as false) when evaluated in a Boolean context (like inside if conditions).
 
 These are always considered false:
 
@@ -1366,6 +1373,7 @@ These are always considered false:
 8.NaN
 
 Q.What is a closure and why is it used?
+Ans:
 A **closure** is a feature where an **inner function has access to variables from its outer (enclosing) function's scope** even after the outer function has finished executing.
 
 ### 📍 **What is a Closure?**
@@ -1439,7 +1447,7 @@ console.log(counter2()); // 2
 ```
 ---
 Q.What is the difference between function declaration and function expression?
-Function Declaration
+a.Function Declaration
 
 1.A function defined with the function keyword and a name.
 2.Hoisted → can be called before it is defined
@@ -1450,11 +1458,10 @@ function greet() {
   return "Hello!";
 }
 
-Function Expression
+2.Function Expression
 
 1.A function assigned to a variable (can be anonymous or named).
 2.Not hoisted → can only be called after definition.
-// console.log(greet()); // ❌ ReferenceError
 
 const greet = function () {
   return "Hello!";
@@ -1463,12 +1470,15 @@ console.log(greet()); // ✅ works
 
 
 Q.What is the difference between synchronous and asynchronous JavaScript?
+Ans:
 Synchronous JavaScript executes code line by line and blocks further execution until a task finishes, while asynchronous JavaScript allows non-blocking execution where tasks like API calls or timers run in the background and complete later via callbacks, promises, or async/await.
 
 Q. What is the difference between map() and forEach()?
+Ans:
 map() creates a new array with transformed values, while forEach() just executes a function on each element and returns undefined. Use map() when you need a result, forEach() for side-effects.
 
 Q. What is the difference between null and undefined?
+Ans:
 null is an intentional empty value explicitly set by the developer, whereas undefined means a variable has been declared but hasn’t been assigned any value yet
 
 Q.What is the difference between a function declaration, a function expression, and an arrow function?
@@ -1477,19 +1487,40 @@ Q.What is the difference between a function declaration, a function expression, 
 2.Expressions are not hoisted.
 3.Arrow functions don’t have their own this and are shorter syntax.
 
+Q.What is the difference arrow function and normal function?
+Ans:
+The main difference between an arrow function and a normal function is how they handle the this keyword and other properties like arguments.
+
+1.Arrow functions don’t have their own this; instead, they inherit it from the surrounding scope. This is useful when you want to access the context of the outer function, like inside callbacks or event handlers.
+
+2.Normal functions, on the other hand, have their own this depending on how they are called. They also have access to the arguments object, whereas arrow functions don’t.
+
+Additionally, arrow functions cannot be used as constructors and don’t have a prototype, whereas normal functions can be used to create objects with new.
+
+So, arrow functions are great for shorter functions or when you want to keep the outer context, while normal functions are better when you need your own this, arguments, or need to create instances.
+
+
 Q.What is the difference between for...in and for...of loops?
+Ans:
 for...in iterates over the keys (property names) of an object, while for...of iterates over the values of an iterable like arrays, strings, or maps.
 
 Q. What is the difference between call(), apply(), and bind()?
+Ans:
 call() invokes a function immediately with arguments passed one by one, apply() invokes it immediately with arguments passed as an array, and bind() returns a new function with a fixed this context that can be invoked later.
 
 Q. What is the difference between setTimeout() and setInterval()?
+Ans:
+Both setTimeout() and setInterval() are JavaScript functions that are used to execute code after a certain amount of time, but they work differently.
 
-1.setTimeout() runs code once after a delay.
-2.setInterval() runs repeatedly at fixed intervals.
+setTimeout() is used when you want to run a function once after a specified delay. It waits for the delay time and then executes the code.
+
+setInterval(), on the other hand, is used when you want to run a function repeatedly at regular intervals. It keeps executing the function every specified amount of time until you stop it.
+
+So, setTimeout() is for single delayed execution, whereas setInterval() is for repeated execution.
 
 Q.What is the difference between localStorage, sessionStorage, and cookies?
-localStorage stores data with no expiry (until cleared manually), sessionStorage stores data only for a browser tab session, and cookies store small pieces of data with an expiry date that are automatically sent to the server with every HTTP request.
+Ans:
+
 
 Q.What is the difference between a shallow copy and a deep copy?
 A shallow copy only copies the first level of an object, so nested objects or arrays still share references with the original, whereas a deep copy creates a fully independent clone where even nested objects are duplicated and do not affect the original.
