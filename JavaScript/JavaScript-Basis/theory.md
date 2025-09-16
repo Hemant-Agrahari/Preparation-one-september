@@ -1708,3 +1708,5 @@ unshift()    → Number (new length)
 splice()     → Array (removed elements)
 sort()       → Same Array (sorted)
 reverse()    → Same A
+
+Q.What is the difference between indexOf and findIndex?

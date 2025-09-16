@@ -237,3 +237,5 @@ It works like useEffect but runs synchronously after DOM mutations, useful for m
 
 8.useImperativeHandle
 It lets you customize the value exposed when using refs in a child component.
+
+Q.What is react fiber?

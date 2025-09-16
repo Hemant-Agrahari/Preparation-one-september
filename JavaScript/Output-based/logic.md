@@ -22,6 +22,10 @@ Q.console.log(0.1+0.2 === 0.3)
 Output: false
 Explanation: Floating-point numbers in JavaScript are not always exact due to binary representation. 0.1 + 0.2 evaluates to 0.30000000000000004.
 
+Q.console.log({}=={})
+
+Q.console.log({}==={})
+
 Q.let obj = {a:1}
 let copy = obj
 copy.a=5;
