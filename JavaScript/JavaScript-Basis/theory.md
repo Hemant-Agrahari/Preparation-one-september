@@ -1640,103 +1640,52 @@ slice():
 “You pass a starting index, the number of elements to remove, and optionally elements to add at that position.”
 
 Q.What is event loop?
-The Event Loop in JavaScript is a mechanism that handles asynchronous operations (like setTimeout, promises, fetch calls, etc.) by continuously checking and executing tasks from different queues.
+Ans:
+The event loop is a mechanism in JavaScript that allows it to handle asynchronous operations while keeping it single-threaded. It’s how JavaScript manages tasks like handling user interactions, network requests, or timers without blocking the main thread.”
 
-Since JavaScript is single-threaded (executes one thing at a time), the Event Loop makes it possible to do tasks like waiting for a timer, handling user clicks, or fetching data without blocking the main thread
+✅ How it works:
 
-How it works (Step by Step)
+1.“JavaScript has a call stack, where it executes functions one by one.”
+2.“When an asynchronous operation like setTimeout() or a network request happens, it’s sent to a Web API or environment to wait.”
 
-Call Stack (Execution stack)
+3.“Once the operation is complete, its callback is added to a task queue (or callback queue).”
 
-Where JavaScript executes code line by line.
-
-Example: console.log("Hello") goes here first.
-
-Web APIs / Background APIs
-
-Browser provides APIs (like setTimeout, fetch, DOM events).
-
-When you call them, they run outside the call stack.
-
-Callback / Task Queue (Message Queue)
-
-Once a Web API finishes (e.g., timer done, data fetched), the callback is moved here.
-
-Event Loop
-
-Constantly checks:
-👉 “Is the Call Stack empty?”
-
-If yes, it pushes the next task from the Queue into the Call Stack.
-
-If no, it waits.
+4.“The event loop continuously checks if the call stack is empty, and if it is, it takes the first callback from the queue and pushes it onto the stack for execution.
 
 Q.What is prototype? 
-In JavaScript, Prototype is a built-in object that every function and object gets automatically. It is used to share properties and methods across all instances created from a constructor function.
+Ans:
+In JavaScript, a prototype is an object that every function and object has by default. It’s used to add properties and methods that can be shared across instances. This is how JavaScript implements inheritance and allows objects to access properties or methods from other objects.”
 
-Think of it like a blueprint or a parent object from which other objects can inherit methods and properties
+✅ Key points:
+
+Prototype chain:
+“When you try to access a property or method on an object, JavaScript first looks at the object itself. If it’s not found, it looks up to its prototype, and then to the prototype’s prototype, and so on. This is called the prototype chain.”
+
+Adding methods via prototype:
+“You can define a method once on a prototype, and all objects created from that constructor can access it without having to define it again.”
 
 Q.What is Temporary Dead Zone?
-The Temporary Dead Zone (TDZ) is the time between when a variable is hoisted and when it is initialized in JavaScript.
-
-Variables declared with let and const are hoisted (like var), but they are not initialized with a default value (undefined).
-
-During this time (before initialization), if you try to access the variable → it throws a ReferenceError.
-
-This period is called the Temporary Dead Zone (TDZ).
+Ans:Temporary Dead Zone, or TDZ, is a behavior in JavaScript that happens with variables declared using let and const. It’s the time between the start of the block and the point where the variable is declared, where the variable exists but cannot be accessed yet. If you try to use it before it's declared, JavaScript will throw a ReferenceError
 
 Q.What is the difference between spead and rest operator?
-Both spread and rest operators use three dots (...), but their purpose is different.
+Ans:
+The spread operator (...) and the rest operator (...) look the same, but they are used in different situations and have opposite purposes.”
 
-Spread Operator is used to expand an array or object into individual elements. For example, when passing an array into a function:
+✅ Spread Operator:
 
-let nums = [1, 2, 3];
-console.log(Math.max(...nums)); // 3
+Used to expand or spread elements of an array or object into individual elements.
+
+Commonly used when combining arrays, copying objects, or passing arguments.
+
+✅ Rest Operator:
+
+Used to collect multiple elements into a single array or object.
+
+Commonly used in function parameters to gather arguments or in destructuring assignments.
 
 
-Rest Operator is used to collect multiple elements into a single array. For example, when a function takes many arguments:
-function sum(...numbers) {
-  return numbers.reduce((a, b) => a + b, 0);
-}
-console.log(sum(1, 2, 3, 4)); // 10
-
-Q.What is the difference loaclstorage session storage and cookies?
-LocalStorage, SessionStorage, and Cookies are all used to store data in the browser, but they differ in size, expiry, and usage.”
-
-🔹 1. LocalStorage
-
-Stores data in the browser with no expiry.
-
-Data stays even after closing/reopening the browser.
-
-Storage limit ≈ 5–10 MB.
-
-Only accessible on the client-side (JavaScript).
-localStorage.setItem("name", "Rahul");
-console.log(localStorage.getItem("name")); // Rahul
-
-2. SessionStorage
-
-Similar to LocalStorage, but data lasts only for the browser tab/session.
-
-Once the tab or window is closed → data is cleared.
-
-Storage limit ≈ 5 MB.
-sessionStorage.setItem("user", "Sneha");
-console.log(sessionStorage.getItem("user")); // Sneha
-
-3. Cookies
-
-Small pieces of data (≈ 4 KB).
-
-Can have an expiry date set by the server or client.
-
-Sent with every HTTP request → often used for authentication, sessions, tracking.
-
-Accessible by both client (JavaScript) and server.
-document.cookie = "token=abc123; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 Q. What is an Event Handler?
-An event handler is a function in JavaScript that is executed when a specific event occurs, such as a user clicking a button, typing in a text box, or submitting a form. It allows us to make web pages interactive by responding to user actions or browser events
+Ans:An event handler is a function in JavaScript that is executed when a specific event occurs, such as a user clicking a button, typing in a text box, or submitting a form. It allows us to make web pages interactive by responding to user actions or browser events
 
 Q. What is Event Delegation?
 Event delegation is a technique in JavaScript where instead of attaching event handlers to multiple child elements, we attach a single event handler to their parent element. The event bubbles up from the child to the parent, and we handle it there. This improves performance and makes the code easier to manage
@@ -1744,32 +1693,55 @@ Event delegation is a technique in JavaScript where instead of attaching event h
 Event delegation means handling events at a parent level instead of attaching handlers to each child. It uses event bubbling for efficiency
 
 Q. What is the Difference Between Debouncing and Throttling?
-Debouncing
+Ans:
+Debouncing and throttling are techniques to control how often a function is executed, especially in situations where events can fire frequently, like window resizing, scrolling, or typing
 
-Ensures that a function is only executed after a certain delay since the last time it was invoked.
+✅ Debouncing:
 
-Useful when you want the action to run once after the user stops doing something.
+Delays the function execution until after a certain time has passed without the event being triggered again.
+It’s useful when you want the function to run only once after the user has stopped triggering the event.
+Commonly used in search input fields, where you want to wait until the user finishes typing before sending a request.
 
-Throttling
+✅ Throttling:
 
-Ensures that a function is executed at most once in a specified time interval, no matter how many times the event is triggered.
-
-Useful when you want to limit the execution rate.
-
-Example: Window scroll event (run function every 200ms while scrolling).
+Limits the function execution to run at most once every specified time interval, no matter how many times the event is triggered.
+It’s useful when you want to ensure the function runs at regular intervals while the event continues firing.
+Commonly used in scroll events or resizing, where you want to process updates but not overwhelm the browser
 
 
 Q. Difference between every() and find() in JavaScript
-every()
+Ans:
+Both every() and find() are array methods in JavaScript used to check or search elements, but they serve different purposes and behave differently.
 
-Tests whether all elements in an array pass a given condition.
+✅ every():
 
-Returns a boolean (true / false).
+“The every() method checks if all elements in an array satisfy a condition.”
+“It returns true if every element passes the test, otherwise it returns false.”
+“Once it finds an element that doesn’t meet the condition, it stops checking further.”
 
-Stops execution as soon as it finds a false.
+✅ find():
+
+“The find() method searches the array and returns the first element that satisfies the condition.”
+“If no element matches, it returns undefined.”
+“It stops checking after finding the first match.”
 
 
 Q.What is the difference between shift and unshift method in js?
+Ans:
+shift() and unshift() are array methods in JavaScript that work with the beginning of the array, but they do opposite things.”
+
+✅ shift():
+
+“The shift() method removes the first element from an array.”
+“It modifies the original array and returns the removed element.”
+“It’s useful when you want to process or discard the first item.”
+
+✅ unshift():
+
+“The unshift() method adds one or more elements to the beginning of an array.”
+“It modifies the original array and returns the new length of the array.”
+“It’s useful when you want to insert items at the start.”
+
 Q.List of return type in js
 Ans:// 🔹 JavaScript Array Methods Cheat Sheet (Return Types)
 
