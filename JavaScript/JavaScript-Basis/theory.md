@@ -1512,68 +1512,132 @@ Q. What is the difference between setTimeout() and setInterval()?
 Ans:
 Both setTimeout() and setInterval() are JavaScript functions that are used to execute code after a certain amount of time, but they work differently.
 
-setTimeout() is used when you want to run a function once after a specified delay. It waits for the delay time and then executes the code.
+1.setTimeout() is used when you want to run a function once after a specified delay. It waits for the delay time and then executes the code.
 
-setInterval(), on the other hand, is used when you want to run a function repeatedly at regular intervals. It keeps executing the function every specified amount of time until you stop it.
+2.setInterval(), on the other hand, is used when you want to run a function repeatedly at regular intervals. It keeps executing the function every specified amount of time until you stop it.
 
 So, setTimeout() is for single delayed execution, whereas setInterval() is for repeated execution.
 
 Q.What is the difference between localStorage, sessionStorage, and cookies?
 Ans:
+localStorage, sessionStorage, and cookies are all ways to store data on the client side, but they have some differences.”
 
+1.localStorage
+
+“The data stored in localStorage has no expiration, so it stays even if the user closes the browser or restarts the system. It’s usually used for things like saving user preferences. It has more storage space compared to cookies.”
+
+2.sessionStorage
+
+“The data stored in sessionStorage is only available during the current session. Once the tab or browser is closed, the data is cleared. It’s useful when you want to keep data temporarily, like form data while the user is filling it out.”
+
+3.Cookies
+
+“Cookies are small pieces of data, with a size limit of around 4KB, and they can be set with an expiration time. Cookies are sent with every HTTP request to the server, so they are used for authentication and tracking purposes.”
+
+“So basically, localStorage and sessionStorage are not sent to the server with each request and are used for storing larger amounts of data on the client side, while cookies are smaller and are sent to the server, making them useful for sessions and authentication.
 
 Q.What is the difference between a shallow copy and a deep copy?
-A shallow copy only copies the first level of an object, so nested objects or arrays still share references with the original, whereas a deep copy creates a fully independent clone where even nested objects are duplicated and do not affect the original.
+ans:
+The difference between a shallow copy and a deep copy is about how objects are copied, especially when they have nested objects or references.”
+
+1.Shallow Copy
+
+A shallow copy only copies the top-level properties. If the object has nested objects or arrays, it doesn’t create a new copy for those nested parts — instead, it keeps the references to the original nested objects. So if you change the nested data in the copy, it will also affect the original object.
+
+2.Deep Copy
+
+A deep copy copies the object and all of its nested objects or arrays, creating completely new and independent copies. Changes in the deep copy won’t affect the original object because everything is duplicated.
+
+In short, shallow copy copies only the first layer and shares references to deeper parts, whereas deep copy duplicates everything recursively so that both objects are fully independent.
 
 Q. What is the difference between event bubbling and event capturing?
-In Event Bubbling, the event starts from the target element and bubbles up to the root, while in Event Capturing, the event starts from the root and travels down to the target element.
+Event bubbling and event capturing are two phases of how events are handled in the DOM when an event happens on an element.”
+
+1.Event Capturing (or ‘trickling’ phase):
+
+“In event capturing, the event starts from the outermost element (like the document or body) and goes down to the target element. It’s like the event ‘trickles’ down through the parent elements before reaching the actual element where the event happened.”
+
+2.Event Bubbling:
+
+“In event bubbling, the event starts from the target element and bubbles up through its parent elements until it reaches the outermost one. This is the default behavior in most browsers.”
+
+“So basically, capturing goes from parent to child, and bubbling goes from child to parent. You can control which phase you want the event listener to act on by specifying it when you attach the event.
 
 Q.What is the difference between slice() and splice() in arrays?
-slice() returns a shallow copy of a portion of the array without modifying the original, while splice() actually changes the original array by adding, removing, or replacing elements
+Both slice() and splice() are methods used with arrays, but they work differently and are used for different purposes.”
+
+1.slice():
+
+“The slice() method is used to create a new array by copying a part of an existing array. It doesn’t change the original array. You specify the start and end index, and it returns the selected elements.”
+
+“The important thing is that the start index is inclusive, and the end index is exclusive. That means it starts copying from the start index but stops before the end index.”
+
+2.splice():
+The splice() method is used to modify the original array. It can remove or add elements at a specific index. It changes the original array and returns the removed elements.
+
+So in summary:
+
+slice() creates a new array, doesn’t change the original, and excludes the end index.
+splice() modifies the original array by adding or removing elements.
 
 Q.What is the difference between Object.freeze() and Object.seal()?
-Object.freeze() makes an object fully immutable — you can’t add, remove, or modify its properties.
-On the other hand, Object.seal() prevents adding or removing properties, but you can still update the existing property values.
+ans:
+Both Object.freeze() and Object.seal() are used to restrict changes to objects, but they differ in how much they allow modification.”
+
+1.Object.freeze():
+“Object.freeze() completely prevents any changes to an object. You can’t add new properties, delete existing ones, or modify any property values. The object becomes fully immutable.”
+
+2.Object.seal():
+“Object.seal() prevents adding or deleting properties, but allows you to modify existing property values. So you can still change values, but you can't change the structure of the object.”
 
 Q.What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?
+Ans:
+Promise.all(), Promise.race(), and Promise.allSettled() are methods to handle multiple promises at once, but they behave differently depending on how the promises resolve or reject.”
 
-1.Promise.all(): waits for all to resolve (fails if one rejects).
-2.Promise.race(): resolves/rejects with the first settled promise.
-3.Promise.allSettled(): waits for all and returns results (success or failure).
+1.Promise.all():
+
+“Promise.all() takes an array of promises and waits for all of them to resolve. If any one of the promises rejects, it immediately rejects with that error. It’s useful when you want all the tasks to finish successfully before proceeding.”
+
+2.Promise.race():
+
+“Promise.race() waits for the first promise to settle, whether it resolves or rejects. It returns the result or error of that first settled promise. It’s useful when you want to act on whichever finishes first.”
+
+3.Promise.allSettled():
+
+“Promise.allSettled() waits for all promises to settle, whether they resolve or reject. It gives an array of results with the status and value or reason for each promise. It’s useful when you want to know the outcome of all tasks without stopping for errors.
 
 Q.What is the difference between find and filter?
-find() returns the first element that satisfies the condition, while filter() returns all matching elements in a new array.
+Both find() and filter() are array methods used to search through elements, but they work differently and return different results.”
+
+1.find():
+
+“find() returns the first element in the array that satisfies the condition. Once it finds the match, it stops searching and returns that element. If no element matches, it returns undefined.
+
+2.filter():
+
+“filter() returns all the elements that satisfy the condition as a new array. It keeps searching through the entire array and includes all matching elements. If none match, it returns an empty array.”
 
 Q.What is split() in JavaScript?
-The split() method in JavaScript is used to split a string into an array of substrings based on a specified separator (like a character, word, or regex).
+The split() method in JavaScript is used to split a string into an array of substrings based on a specified separator. The separator can be a character, a word, or even a regular expression.”
 
-syntax:
-string.split(separator, limit);
+Key points:
 
-let str = "JavaScript is awesome";
-console.log(str.split(" "));  
-// ["JavaScript", "is", "awesome"]
-
-let word = "hello";
-console.log(word.split(""));  
-// ["h", "e", "l", "l", "o"]
-
-let str = "apple,banana,orange,grape";
-console.log(str.split(",", 2));  
-// ["apple", "banana"]
+“It breaks the original string wherever it finds the separator.”
+“It returns an array with the separated parts.”
+“If the separator is not found, it returns an array with the whole string as a single element.”
 
 Q.What is the difference between slice() and splice() in JavaScript?
-slice()
+slice() and splice() are both array methods in JavaScript, but they serve different purposes and behave differently.”
 
-Returns a shallow copy of a portion of the array into a new array.
-Does NOT modify the original array.
-Syntax: array.slice(start, end)
+slice():
+“The slice() method is used to create a new array by copying a portion of an existing array. It doesn’t change the original array.”
 
-splice()
+“You pass a start index and an end index, and it copies elements from the start index up to, but not including, the end index.”
 
-Changes the original array by adding/removing elements.
-Returns the deleted elements as a new array.
-Syntax: array.splice(start, deleteCount, item1, item2, ...)
+2.splice():
+“The splice() method is used to change the contents of an array by adding or removing elements. It modifies the original array.”
+
+“You pass a starting index, the number of elements to remove, and optionally elements to add at that position.”
 
 Q.What is event loop?
 The Event Loop in JavaScript is a mechanism that handles asynchronous operations (like setTimeout, promises, fetch calls, etc.) by continuously checking and executing tasks from different queues.
