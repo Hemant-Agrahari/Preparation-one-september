@@ -1777,3 +1777,6 @@ sort()       → Same Array (sorted)
 reverse()    → Same A
 
 Q.What is the difference between indexOf and findIndex?
+Ans:The main difference is that indexOf is used to find the index of a specific value in an array, whereas findIndex is used when we want to find the index based on a condition or logic.
+
+
