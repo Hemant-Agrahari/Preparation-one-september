@@ -252,3 +252,194 @@ It works like useEffect but runs synchronously after DOM mutations, useful for m
 It lets you customize the value exposed when using refs in a child component.
 
 Q.What is react fiber?
+Ans:React Fiber is the new reconciliation engine introduced in React 16. It’s basically the algorithm that React uses to figure out what parts of the UI need to be updated when the application state changes. The main goal of Fiber is to make React rendering more efficient and allow updates to be split into small units of work, so React can pause, reuse, or abort work if needed. This helps React handle animations, gestures, and complex updates more smoothly.”
+
+Q.How do you pass data from parent to child and child to parent?
+Ans:To pass data from parent to child, we use props. To pass data from child to parent, we pass a callback function as a prop, and the child invokes it to send data back
+
+The standard way is using callback functions via props, also called lifting state up. But if components are deeply nested, we can use Context API, or global state managers like Redux. In advanced cases, even event emitters or third-party libraries can be used
+
+Q1. What is React?
+Ans: React is an open-source JavaScript library developed by Facebook for building user interfaces, mainly single-page applications. 
+It uses a component-based architecture, meaning the UI is broken into reusable components. 
+The main strength of React is its Virtual DOM, which makes updates efficient. 
+Example: When a button’s label changes, React updates only that part of the DOM instead of reloading the whole page.
+
+---
+
+Q2. What is useMemo?
+Ans: useMemo is a React hook that memoizes the result of an expensive calculation. 
+It recalculates only when dependencies change, preventing unnecessary re-renders. 
+Example: Suppose we calculate a filtered list of 1000 items. With useMemo, this calculation runs only when the data or filter changes.
+This improves performance in heavy computations.
+
+---
+
+Q3. What are the features of React?
+Ans: 
+- Component-based architecture (reusable UI blocks).
+- Virtual DOM for fast rendering.
+- One-way data binding for predictable flow.
+- JSX for writing HTML inside JavaScript.
+- Hooks for functional components.
+- Large ecosystem (Router, Redux, etc.).
+Extra Point: React is declarative — we describe "what" UI should look like, and React handles the "how".
+
+---
+
+Q4. What is JSX?
+Ans: JSX stands for JavaScript XML. It allows us to write HTML-like syntax in JavaScript. 
+Example:
+    const element = <h1>Hello</h1>;
+This makes code more readable. Behind the scenes, JSX is compiled to React.createElement(). 
+It also helps with better error messages and linting.
+
+---
+
+Q5. What is DOM?
+Ans: DOM is the Document Object Model. It’s a tree-like structure where every HTML element is a node.
+JavaScript can manipulate DOM to change UI. 
+Limitation: Direct DOM manipulation is slow because it updates the entire UI, which is why React introduced Virtual DOM.
+
+---
+
+Q6. What is Virtual DOM?
+Ans: Virtual DOM is a lightweight in-memory representation of the real DOM. 
+React uses a diffing algorithm to compare old and new virtual DOM and applies only the differences to the real DOM.
+This makes UI updates faster and more efficient.
+Analogy: Think of Virtual DOM like a draft copy of a Word file. You edit the draft first, then apply only the changes to the final document.
+
+---
+
+Q7. What is component lifecycle of React class component?
+Ans: Lifecycle has 3 phases:
+- Mounting: constructor, render, componentDidMount.
+- Updating: shouldComponentUpdate, render, componentDidUpdate.
+- Unmounting: componentWillUnmount.
+These methods give control over when to fetch data, update DOM, or clean up resources.
+Extra Point: In functional components, lifecycle is managed using hooks like useEffect.
+
+---
+
+Q8. What are fragments in React?
+Ans: Fragments let us group multiple children elements without creating extra DOM nodes. 
+Example:
+    return (
+      <>
+        <h1>Title</h1>
+        <p>Paragraph</p>
+      </>
+    )
+This avoids unnecessary <div> wrappers and keeps DOM clean.
+
+---
+
+Q9. What are props in React?
+Ans: Props are short for "properties". They allow parent components to pass data to children. 
+Props are immutable, meaning the child cannot modify them. 
+They make components reusable and dynamic.
+
+---
+
+Q10. What are synthetic events in React?
+Ans: Synthetic events are React’s wrapper around native browser events. 
+They provide a consistent API across browsers and improve performance by event pooling. 
+Example: onClick in React is a synthetic event.
+
+---
+
+Q11. What is the difference between package.json and package-lock.json?
+Ans: package.json stores metadata and dependencies of the project. 
+package-lock.json locks exact versions of installed packages, ensuring consistency across environments. 
+In short, package.json is like a recipe, package-lock.json is the exact grocery list used.
+
+---
+
+Q12. What are the differences between client-side and server-side rendering?
+Ans: 
+- Client-Side Rendering (CSR): Browser downloads minimal HTML and JavaScript builds UI. Faster after initial load but weaker SEO.
+- Server-Side Rendering (SSR): Server sends fully rendered HTML to the browser. Faster first load and better SEO.
+React supports both with frameworks like Next.js.
+
+---
+
+Q13. What is state in ReactJS?
+Ans: State is an object that stores dynamic data inside a component. 
+When state changes, the component re-renders automatically. 
+Example: A counter app where state holds the count value.
+
+---
+
+Q14. What are props?
+Ans: Props are inputs passed from parent to child component. 
+They are immutable and help in making components dynamic and reusable. 
+Example: Passing username as a prop to a Profile component.
+
+---
+
+Q15. What are the differences between state and props in React?
+Ans: 
+- Props are passed from parent, State is managed inside the component.
+- Props are read-only, State is mutable with setState or useState.
+- Props make components reusable, State makes components interactive.
+
+---
+
+Q16. What is props drilling?
+Ans: Props drilling happens when props are passed down through multiple nested components just to reach a deeply nested child. 
+It makes the code hard to maintain.
+
+---
+
+Q17. What are the disadvantages of props drilling and how can we avoid it?
+Ans: 
+Disadvantages: Makes code messy, hard to maintain, and less reusable. 
+Avoid by: Using Context API or state management libraries like Redux, Recoil, or Zustand.
+
+---
+
+Q18. What are Pure Components in React?
+Ans: A PureComponent does a shallow comparison of props and state. 
+It re-renders only if something actually changes, improving performance. 
+Functional equivalent is React.memo.
+
+---
+
+Q19. What are Refs in React?
+Ans: Refs give direct access to DOM elements or React elements without re-rendering. 
+They are useful for managing focus, text selection, media playback, or third-party libraries.
+
+---
+
+Q20. What is meant by forward ref?
+Ans: Forward ref lets a parent pass a ref to a child component and access the child’s DOM node. 
+It’s useful when building reusable input components that the parent should control.
+
+---
+
+Q21. What are Error Boundaries?
+Ans: Error Boundaries are special React components that catch errors in child components during rendering. 
+Instead of crashing, they show a fallback UI. 
+Implemented with componentDidCatch or getDerivedStateFromError.
+
+---
+
+Q22. What are Higher Order Components in React?
+Ans: A Higher-Order Component (HOC) is a function that takes a component and returns an enhanced component. 
+They are used for code reuse, like adding logging, authentication, or styling.
+Example: withRouter in React Router is a HOC.
+
+---
+
+Q23. What are the differences between controlled and uncontrolled components?
+Ans: 
+- Controlled: Form elements controlled by React state. Example: <input value={state} onChange={...}>.
+- Uncontrolled: Form elements manage their own state using refs. 
+Controlled gives more control and validation, Uncontrolled is simpler.
+
+---
+
+Q24. What is useCallback?
+Ans: useCallback is a React hook that memoizes a function so it’s not recreated on every render. 
+It’s useful when passing callbacks to child components that rely on reference equality to prevent re-renders. 
+Example: useCallback(() => doSomething(), [deps]).
